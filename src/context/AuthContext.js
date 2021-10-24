@@ -45,9 +45,7 @@ const signup = (dispatch) => async (username, password, callback) => {
       type: "signin",
       payload: { token: response.data.token, username },
     });
-    if (callback) {
-      callback();
-    }
+    navigate("Index");
     console.log(response.data);
   } catch (err) {
     dispatch({
@@ -69,9 +67,7 @@ const signin = (dispatch) => async (username, password, callback) => {
       type: "signin",
       payload: { token: response.data.token },
     });
-    if (callback) {
-      callback();
-    }
+    navigate("Index");
   } catch (error) {
     dispatch({
       type: "add_error",

@@ -11,6 +11,12 @@ const SignupScreen = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const resetHandler = () => {
+    clearErrorMessage();
+    setUsername("");
+    setPassword("");
+  };
+
   const handleClick = () => setShow(!show);
 
   return (
@@ -23,7 +29,7 @@ const SignupScreen = ({ navigation }) => {
         paddingBottom: 50,
       }}
     >
-      <NavigationEvents onWillFocus={clearErrorMessage} />
+      <NavigationEvents onWillFocus={resetHandler} />
       <Heading style={styles.heading} textAlign='center'>
         Create Account
       </Heading>

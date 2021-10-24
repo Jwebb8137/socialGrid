@@ -13,6 +13,12 @@ const SigninScreen = ({ navigation }) => {
 
   const handleClick = () => setShow(!show);
 
+  const resetHandler = () => {
+    clearErrorMessage();
+    setUsername("");
+    setPassword("");
+  };
+
   return (
     <ImageBackground
       source={require("../../assets/bg.png")}
@@ -23,7 +29,7 @@ const SigninScreen = ({ navigation }) => {
         paddingBottom: 50,
       }}
     >
-      <NavigationEvents onWillFocus={clearErrorMessage} />
+      <NavigationEvents onWillFocus={resetHandler} />
       <Heading style={styles.heading} textAlign='center'>
         Welcome to SocialGrid!
       </Heading>

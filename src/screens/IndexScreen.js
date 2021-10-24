@@ -44,6 +44,7 @@ const IndexScreen = ({ navigation }) => {
 
   const getUser = async () => {
     const username = await AsyncStorage.getItem("username");
+    console.log("username", username);
     setUser(username);
   };
 
