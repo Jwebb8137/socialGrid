@@ -26,7 +26,7 @@ expo start
 <img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635049545/be-inspired-media/ze569foax5qb8l04hfsz.png" width="400"/>
 <img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635049545/be-inspired-media/atrkrgkkls4fodrant6n.png" width="400"/>
 <img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635049545/be-inspired-media/azr00zmiulftdua0nx9e.png" width="400"/>
-<img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635049545/be-inspired-media/rlowkoxxcvoijzku2uy4.png" width="400"/>
-<img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635049545/be-inspired-media/yjwwwudl1ed5i3ci6ajb.png" width="400"/>
-<img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635049545/be-inspired-media/uysffl1jrxtn55ith180.png" width="400"/>
+<img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635052513/be-inspired-media/tlanrugbyeiaesdunjed.png" width="400"/>
+<img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635052513/be-inspired-media/sizuaitszgwmbjlaxhwa.png" width="400"/>
+<img src="https://res.cloudinary.com/dvkqz0fed/image/upload/v1635052513/be-inspired-media/iwpiecwk0tnjun0lwktw.png" width="400"/>
 </p>
