@@ -38,9 +38,7 @@ const fetchPosts = (dispatch) => async () => {
 const addPost = (dispatch) => {
   return async (content, photoUrl) => {
     const username = await AsyncStorage.getItem("username");
-    console.log(content, photoUrl);
     try {
-      console.log(content, username);
       await socialGridApi.post("/posts", { content, photoUrl, username });
       // dispatch({ type: "add_post", payload: { content } });
       navigate("Index");
@@ -53,7 +51,6 @@ const addPost = (dispatch) => {
 const editPost = (dispatch) => {
   return async (id, content, photoUrl) => {
     photoUrl = photoUrl === undefined ? "" : photoUrl;
-    console.log("id", id);
     try {
       await socialGridApi.put(`/posts/${id}`, { content, photoUrl });
       dispatch({ type: "edit_post", payload: { id, content, photoUrl } });

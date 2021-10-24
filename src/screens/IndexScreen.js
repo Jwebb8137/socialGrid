@@ -31,7 +31,6 @@ const IndexScreen = ({ navigation }) => {
 
   useEffect(() => {
     getUser();
-    flatListRef.current.scrollToOffset({ animated: false, offset: 0 });
   }, []);
 
   const onRefresh = React.useCallback(() => {
@@ -42,9 +41,13 @@ const IndexScreen = ({ navigation }) => {
     });
   }, []);
 
+  const handleFocus = () => {
+    fetchPosts();
+    flatListRef.current.scrollToOffset({ animated: false, offset: 0 });
+  };
+
   const getUser = async () => {
     const username = await AsyncStorage.getItem("username");
-    console.log("username", username);
     setUser(username);
   };
 
@@ -58,7 +61,7 @@ const IndexScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <NavigationEvents onWillFocus={fetchPosts} />
+      <NavigationEvents onWillFocus={handleFocus} />
       <Stack>
         <View style={styles.section}>
           <Heading
@@ -94,7 +97,6 @@ const IndexScreen = ({ navigation }) => {
           keyExtractor={() => Math.floor(Math.random() * 99999)}
           style={styles.list}
           renderItem={({ item }) => {
-            console.log(item.username, user);
             return (
               <TouchableOpacity
                 onPress={() =>
@@ -187,7 +189,10 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   list: {
-    height: Dimensions.get("window").height * 0.725,
+    height:
+      Platform.OS === "ios"
+        ? Dimensions.get("window").height * 0.725
+        : Dimensions.get("window").height * 0.795,
   },
   row: {
     flexDirection: "row",

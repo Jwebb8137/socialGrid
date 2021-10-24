@@ -16,8 +16,6 @@ const PostScreen = ({ navigation }) => {
   const [fullscreen, setFullscreen] = useState(false);
 
   const post = state.find((post) => post._id === navigation.getParam("id"));
-  console.log(navigation.getParam("username"));
-  console.log(state);
 
   const renderEditButton = () => {
     return (

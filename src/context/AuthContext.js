@@ -46,7 +46,6 @@ const signup = (dispatch) => async (username, password, callback) => {
       payload: { token: response.data.token, username },
     });
     navigate("Index");
-    console.log(response.data);
   } catch (err) {
     dispatch({
       type: "add_error",

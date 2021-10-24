@@ -9,7 +9,6 @@ const CreateScreen = ({ navigation }) => {
   return (
     <PostForm
       onSubmit={(content, photoUrl) => {
-        console.log(content, photoUrl);
         addPost(content, photoUrl);
       }}
     />

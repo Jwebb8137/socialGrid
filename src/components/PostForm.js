@@ -8,7 +8,6 @@ const PostForm = ({ onSubmit, initialValues }) => {
   const [photoUrl, setPhotoUrl] = useState(initialValues.media);
 
   const removeMedia = () => {
-    console.log("removing media");
     setPhotoUrl("");
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Image } from "react-native";
-import { Button, View, Text } from "native-base";
+import { Button, View, Spinner } from "native-base";
 import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
@@ -8,12 +8,15 @@ import { TouchableOpacity } from "react-native";
 const UploadImage = (props) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [photo, setPhoto] = useState(props.initialValues.media);
+  const [loading, setLoading] = useState(false);
   let CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dvkqz0fed/upload";
 
   let openImagePickerAsync = async () => {
+    setLoading(true);
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (status !== "granted") {
       alert("Sorry, we need camera roll permissions to make this work!");
+      setLoading(false);
       return;
     }
 
@@ -45,8 +48,8 @@ const UploadImage = (props) => {
     })
       .then(async (r) => {
         let data = await r.json();
-        console.log(data.url);
         setPhoto(data.url);
+        setLoading(false);
         props.setPhoto(data.url);
       })
       .catch((err) => console.log(err));
@@ -69,7 +72,11 @@ const UploadImage = (props) => {
         }}
         size='lg'
       >
-        <Ionicons name='add' size={44} color='#545454' />
+        {loading ? (
+          <Spinner color='cyan.500' size='lg' />
+        ) : (
+          <Ionicons name='add' size={44} color='#545454' />
+        )}
       </Button>
     );
   };
