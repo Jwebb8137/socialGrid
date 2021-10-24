@@ -15,3 +15,7 @@ npm install
 ```
 expo start
 ```
+
+<p>Test account credentials for logging in:</p>
+<p>Username: test</p>
+<p>Password: test</p>
