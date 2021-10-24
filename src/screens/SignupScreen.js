@@ -86,7 +86,7 @@ const SignupScreen = ({ navigation }) => {
           ) : null}
           <Button
             onPress={() =>
-              signup(username, password, () => navigation.navigate("Index"))
+              signup(username, password, () => navigation.navigate("Feed"))
             }
             variant='subtle'
             endIcon={<Icon as={Ionicons} name='caret-forward' size='sm' />}

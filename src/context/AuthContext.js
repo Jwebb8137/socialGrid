@@ -27,7 +27,7 @@ const trySignin = (dispatch) => async () => {
   const username = await AsyncStorage.getItem("username");
   if (token) {
     dispatch({ type: "signin", payload: { token, username } });
-    navigate("Index");
+    navigate("Feed");
   } else {
     navigate("Signin");
   }
@@ -45,7 +45,7 @@ const signup = (dispatch) => async (username, password, callback) => {
       type: "signin",
       payload: { token: response.data.token, username },
     });
-    navigate("Index");
+    navigate("Feed");
   } catch (err) {
     dispatch({
       type: "add_error",
@@ -66,7 +66,7 @@ const signin = (dispatch) => async (username, password, callback) => {
       type: "signin",
       payload: { token: response.data.token },
     });
-    navigate("Index");
+    navigate("Feed");
   } catch (error) {
     dispatch({
       type: "add_error",

@@ -41,7 +41,7 @@ const addPost = (dispatch) => {
     try {
       await socialGridApi.post("/posts", { content, photoUrl, username });
       // dispatch({ type: "add_post", payload: { content } });
-      navigate("Index");
+      navigate("Feed");
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +54,7 @@ const editPost = (dispatch) => {
     try {
       await socialGridApi.put(`/posts/${id}`, { content, photoUrl });
       dispatch({ type: "edit_post", payload: { id, content, photoUrl } });
-      navigate("Index");
+      navigate("Feed");
     } catch (error) {
       console.log(error);
     }

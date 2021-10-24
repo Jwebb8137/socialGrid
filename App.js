@@ -16,7 +16,7 @@ console.disableYellowBox = true;
 
 const navigator = createStackNavigator(
   {
-    Index: IndexScreen,
+    Feed: IndexScreen,
     Post: PostScreen,
     Create: CreateScreen,
     Edit: EditScreen,

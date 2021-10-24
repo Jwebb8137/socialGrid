@@ -86,7 +86,7 @@ const SigninScreen = ({ navigation }) => {
           ) : null}
           <Button
             onPress={() =>
-              signin(username, password, () => navigation.navigate("Index"))
+              signin(username, password, () => navigation.navigate("Feed"))
             }
             variant='subtle'
             endIcon={<Icon as={Ionicons} name='caret-forward' size='sm' />}
