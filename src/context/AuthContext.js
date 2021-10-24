@@ -77,8 +77,8 @@ const signin = (dispatch) => async (username, password, callback) => {
 
 const signout = (dispatch) => {
   return async () => {
-    await AsyncStorage.removeItem("token");
     await AsyncStorage.removeItem("username");
+    await AsyncStorage.removeItem("token");
     dispatch({ type: "signout" });
     navigate("Signin");
   };
